@@ -93,7 +93,6 @@ class ProductTest(APITestCase, ):
     def test_product_categories_count(self):
         """
         Тест неправильного количества категорий у товара
-        :return:
         """
         url = reverse('products-list')
         data = {'name': 'Товар 2', 'price': '123',
