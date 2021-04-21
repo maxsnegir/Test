@@ -153,3 +153,19 @@ class ProductTest(APITestCase, ):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(response.json()[0], 'Нельзя удалить категории '
                                              'к которой привязаны товары')
+
+    def test_filter_products(self):
+        """
+        Тест фильтров
+        """
+        get_params = f'?name={self.product.name}&category_id={self.c1.id}' \
+                     f'&price_min=120'
+        url = reverse('products-list') + get_params
+        response = self.client.get(url, format='json')
+
+        products = Product.objects.filter(name=self.product.name,
+                                          category__id=self.c1.id,
+                                          price__gte=120)
+        serializer = ProductSerializer(products, many=True)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data, serializer.data)
