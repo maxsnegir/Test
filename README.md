@@ -23,7 +23,7 @@ docker-compose up
 | endpoint | Тип запроса | Описание |
 | :--- | :--- | :--- | 
 | api/v1/products/ | GET | Получение всех неудаленных товаров |
-| api/v1/products/? | GET | Фильтрация товаров(доступные GET параметры: name, category_id, category, price_min, price_max)|
+| api/v1/products/? | GET | Фильтрация товаров(доступные GET параметры: name, category_id, category, price_min, price_max, published)|
 | api/v1/products/ | POST | Создание товара |
 | api/v1/products/<product_id>/ | PUT/PATCH | Редактирование товара |
 | api/v1/products/<product_id>/ | DELETE | Удаление товара |
