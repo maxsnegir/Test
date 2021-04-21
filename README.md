@@ -3,6 +3,7 @@
 ## Запуск 
 1. Добавить в .env следующе переменные окружения для работы с базой данных:
 ```
+DB_ENGINE=django.db.backends.postgresql
 DB_NAME=postgres # имя базы данных
 POSTGRES_USER=postgres # логин для подключения к базе данных
 POSTGRES_PASSWORD=admin # пароль для подключения к БД (установите свой)
