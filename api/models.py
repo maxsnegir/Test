@@ -8,7 +8,7 @@ class Product(models.Model):
                                 validators=[MinValueValidator(0,
                                                               'Цена < 0')])
 
-    category = models.ManyToManyField('Category', verbose_name='Категория', )
+    category = models.ManyToManyField('Category', verbose_name='Категория',)
     deleted = models.BooleanField('Товар удален', default=False)
     published = models.BooleanField('Товар опубликован', default=False)
 
